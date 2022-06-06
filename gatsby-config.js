@@ -1,10 +1,21 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `File System Route API`,
+  },
+  plugins: [
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: "product",
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/products`,
+        name: `products`,
+      },
+    },
+  ],
 }

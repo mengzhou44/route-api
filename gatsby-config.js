@@ -3,18 +3,13 @@ module.exports = {
     title: `File System Route API`,
   },
   plugins: [
-    {
-      resolve: `gatsby-transformer-yaml`,
-      options: {
-        typeName: "device",
-      },
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/devices`,
-        name: `devices`,
+        path: `${__dirname}/blog`,
+        name: `blog`,
       },
-    },
+    }
   ],
 }

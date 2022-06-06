@@ -30,11 +30,11 @@ function Index({ data }) {
           <em>gatsbyPath</em> was used.
         </p>
         <ul>
-          {data.products.nodes.map(product => (
-            <li key={product.meta.sku}>
-              <Link to={product.nameSlug}>{product.name}</Link>
+          {data.devices.nodes.map(device => (
+            <li key={device.meta.sku}>
+              <Link to={device.nameSlug}>{device.name}</Link>
               {` `}
-              <Link to={product.skuSlug}>(SKU)</Link>
+              <Link to={device.skuSlug}>(SKU)</Link>
             </li>
           ))}
         </ul>
@@ -48,8 +48,8 @@ function Index({ data }) {
         </p>
         <ul>
           <li>
-            <Link to="/products/incite/offer/REHOBOAM">
-              /products/[brand]/offer/[coupon]
+            <Link to="/devices/incite/offer/REHOBOAM">
+              /devices/[brand]/offer/[coupon]
             </Link>
           </li>
 
@@ -63,11 +63,11 @@ export default Index
 
 export const query = graphql`
   {
-    products: allProduct {
+    devices: allDevice {
       nodes {
         name
-        nameSlug: gatsbyPath(filePath: "/products/{Product.name}")
-        skuSlug: gatsbyPath(filePath: "/products/{Product.meta__sku}")
+        nameSlug: gatsbyPath(filePath: "/devices/{device.name}")
+        skuSlug: gatsbyPath(filePath: "/devices/{device.meta__sku}")
         meta {
           sku
         }

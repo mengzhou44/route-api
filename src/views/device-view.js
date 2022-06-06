@@ -1,22 +1,22 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-function ProductView({ product }) {
+function DeviceView({ device }) {
   return (
     <div className="wrapper">
       <header>
         <Link to="/">Go back to "Home"</Link>
       </header>
       <main>
-        <h1>{product.name}</h1>
+        <h1>{device.name}</h1>
         <p>
-          {product.description}. Appeared in {product.appearance}.
+          {device.description}. Appeared in {device.appearance}.
         </p>
-        <p>SKU: {product.meta.sku}</p>
+        <p>SKU: {device.meta.sku}</p>
       </main>
       <footer>Product provided by Incite.</footer>
     </div>
   )
 }
 
-export default ProductView
+export default DeviceView
